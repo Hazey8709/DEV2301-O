@@ -1,0 +1,268 @@
+* {
+    /* Select all elements that are a child of this parent */
+    box-sizing: border-box;
+}
+
+body {
+    /* Select all elements that match this html tag */
+    /* e.g. <body></body> */
+    font-family: 'Poppins', sans-serif;
+}
+
+main {
+    /* Select all elements that match this html tag */
+     /* e.g. <main></main> */
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-template-rows: .25fr 1fr 1fr;
+    margin: 0 auto;
+}
+
+.league {
+    /* Select all elements with this class */
+    /* e.g. <section class="league"></section> */
+    color: black;
+}
+
+#pageHeader {
+     /* Select all elements with this id */
+     /* e.g. <header id="pageHeader"></header> */
+    color: rgb(31, 30, 33);
+}
+
+main > h2 {
+    /* Select h2 elements that direct parent is a main */
+    /* e.g. 
+     *
+     * <main>
+     *  <section>
+     *    <h2>Not Selected</h2>
+     *  </section>
+     *  <h2>Selected</h2>
+     * </main>
+    */
+    grid-column-start: 1;
+    grid-column-end: span 3;
+}
+
+h2 + h3 {
+    /* Select only h3 elements that directly follow an h2 */
+    /* e.g. 
+     *
+     * <main>
+     *  <h2>My Header</h2>
+     *  <h3>Selected</h3>
+     *  <p>Extra Content</p>
+     *  <h3>Not Selected</h3>
+     * </main>
+    */
+    color: rgb(72, 56, 64);
+}
+
+h4 ~ ul {
+    /* Select all ul elements that follow an h4 */
+    /* e.g. 
+     * <h4>The Header</h4>
+     * <h5>Another Header</h5>
+     * <p>More Content</p>
+     * <ul> <------------------ Selected
+     *  <li>Listed Item</li>
+     *  <li>Listed Item</li>
+     *  <li>Listed Item</li>
+     *  <li>Listed Item</li>
+     * </il>
+    */
+    border-left: darkblue solid 2px;
+    padding-left: 2rem;
+    margin-left: -1rem;
+}
+
+header, main, footer {
+    /* Select all elements found within the comma separated list */
+    width: 80%;
+    margin: 0 auto;
+}
+
+ul li {
+    /* Select all elements that are within the parent at any level */
+    list-style-type: decimal;
+    line-height: 2rem;
+}
+
+ul {
+    padding: 0 0 0 1rem;
+    margin: 0 0 2rem 0;
+    list-style: none;
+}
+
+ul li:hover {
+    list-style-type:disc;
+    cursor:context-menu;
+}
+
+main section:first-of-type {
+    /* Select only first element that matches the selector */
+    /* e.g. 
+     * <main>
+     *  <section> <---- Only element selected
+     *    ...
+     *  </section>
+     *  <section>
+     *    ...
+     *  </section>  
+     *  <section>
+     *    ...
+     *  </section>
+     * </main>
+    */
+    color: darkblue;
+}
+
+main section:nth-child(2n) {
+    /* Select every second child, beginning with the element that matches the selector */
+    /* e.g. 
+     * <main>
+     *  <section> <---- Selected
+     *    ...
+     *  </section>
+     *  <section>
+     *    ...
+     *  </section>  
+     *  <section>  <---- Selected
+     *    ...
+     *  </section>
+     * </main>
+    */
+    color: darkred;
+}
+
+main section:nth-of-type(2) li:nth-child(-n+4) {
+    /* First select only the second child of a specific type, 
+       then select every child starting from the first and stopping at the fourth*/
+    /* e.g. 
+     * <main>
+     *  <section>
+     *    ...
+     *    <ul>
+     *      <li></li> <---- Selected
+     *      <li></li> <---- Selected
+     *      <li></li> <---- Selected
+     *      <li></li> <---- Selected
+     *      <li></li>
+     *    </ul>
+     *  </section>
+     *  <section>
+     *    ...
+     *  </section>  
+     *  <section>
+     *    ...
+     *    <ul>
+     *      <li></li> <---- Selected
+     *      <li></li> <---- Selected
+     *      <li></li> <---- Selected
+     *      <li></li> <---- Selected
+     *      <li></li>
+     *    </ul>
+     *  </section>
+     * </main>
+    */
+    color: green;
+}
+
+main section:first-of-type li:nth-child(5) {
+     /* First select only the first match of a specific type, 
+       then select only the 5th child element*/
+    /* e.g. 
+     * <main>
+     *  <section>
+     *    ...
+     *    <ul>
+     *      <li></li>
+     *      <li></li> 
+     *      <li></li>
+     *      <li></li> 
+     *      <li></li>  <---- Selected
+     *    </ul>
+     *  </section>
+     *  <section>
+     *    ...
+     *  </section>  
+     *  <section> 
+     *    ...
+     *    <ul>
+     *      <li></li>
+     *      <li></li>
+     *      <li></li>
+     *      <li></li>
+     *      <li></li>
+     *    </ul>
+     *  </section>
+     * </main>
+    */
+    color: orange;
+}
+
+main section:nth-child(2n + 1) li:nth-child(5) {
+    /* First select every second match of a specific type shifted by 1, 
+       then select only the 5th child element*/
+    /* e.g. 
+     * <main>
+     *  <section>
+     *    ...
+     *    <ul>
+     *      <li></li>
+     *      <li></li> 
+     *      <li></li>
+     *      <li></li> 
+     *      <li></li>  
+     *    </ul>
+     *  </section>
+     *  <section>
+     *    ...
+     *    <ul>
+     *      <li></li>
+     *      <li></li> 
+     *      <li></li>
+     *      <li></li> 
+     *      <li></li>  <---- Selected
+     *    </ul>
+     *  </section>  
+     *  <section> 
+     *    ...
+     *    <ul>
+     *      <li></li>
+     *      <li></li>
+     *      <li></li>
+     *      <li></li>
+     *      <li></li>
+     *    </ul>
+     *  </section>
+     *  <section>
+     *    ...
+     *    <ul>
+     *      <li></li>
+     *      <li></li> 
+     *      <li></li>
+     *      <li></li> 
+     *      <li></li>  <---- Selected
+     *    </ul>
+     *  </section>  
+     * </main>
+    */
+    background: darkorange;
+}
+
+a {
+    text-decoration: none;
+}
+
+a[href^="https"] {
+    cursor:ne-resize;
+}
+
+a[href^="https"]:after {
+    content: "external";
+    color: red;
+    vertical-align: super;
+    font-size: .5rem;
+}
