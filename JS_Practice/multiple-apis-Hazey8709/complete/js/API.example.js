@@ -1,0 +1,6 @@
+const KEY_FOOTBALL = 'ADD YOUR KEY HERE';
+const KEY_GIPHY = 'ADD YOUR KEY HERE';
+export {
+    KEY_FOOTBALL,
+    KEY_GIPHY
+}
