@@ -1,0 +1,28 @@
+/*!       CSS Page        */
+
+body {
+    background-color: #0005;
+}
+
+h1 {
+    text-align: center;
+    text-decoration: underline;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-weight: bold;
+}
+
+.olPokemonElement {
+    display: inline-flex;
+    flex-wrap: wrap;
+    text-align: center;
+    gap: 30px;
+    /* color: green; */
+}
+
+.olPeopleElement {
+    display: inline-flex;
+    flex-wrap: wrap;
+    text-align: center;
+    gap: 30px;
+    color: blue;
+}

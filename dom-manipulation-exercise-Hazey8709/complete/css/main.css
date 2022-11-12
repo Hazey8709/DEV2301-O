@@ -1,0 +1,27 @@
+h2 {
+    text-decoration: underline ;
+    color: red;
+}
+
+body {
+    background-color: rgba(128, 128, 128, 0.334);
+}
+
+main > h2 {
+    color: green;
+    margin-left: 80px;
+}
+
+li {
+    list-style-type: upper-roman;
+}
+
+
+
+section {
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 20px;
+    width: 250px;
+    padding: 10px;
+}

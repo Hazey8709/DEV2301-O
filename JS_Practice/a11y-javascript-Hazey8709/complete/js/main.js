@@ -57,7 +57,7 @@ const handleNumberKeyEvent = event => {
 
 const handleMathKeyEvent = event => {
     const input = event.key === 'Enter'
-        ? '=' 
+        ? '='
         : event.key === 'Escape'
             ? 'C'
             : event.key === 'Backspace'
