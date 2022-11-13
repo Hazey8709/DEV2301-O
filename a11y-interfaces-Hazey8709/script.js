@@ -137,10 +137,12 @@ const handleKeyEvent = (event) => {
     ) {
         registerInput(event.code || event.key);
         //! Audio Numbers
-        audioNumbers.currentTime = 0;
-        console.log("Number Sounds");
-        audioNumbers.play();
-        // console.log(event.code, event.key, ":Numbers");
+        if (audioProps.mute === true) {
+            audioNumbers.currentTime = 0;
+            console.log("Number Sounds");
+            audioNumbers.play();
+            // console.log(event.code, event.key, ":Numbers");
+        }
     }
 
     if (
