@@ -1,8 +1,8 @@
 {
-    "name": "fakerjs-project",
+    "name": "fakerJS-project",
     "version": "1.0.0",
     "description": "Full-Sail Project",
-    "main": "src/index.html",
+    "source": "src/index.html",
     "scripts": {
         "start": "parcel",
         "build": "parcel build",
