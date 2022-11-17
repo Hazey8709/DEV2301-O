@@ -8,6 +8,10 @@
         "build": "parcel build",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Hazey8709/DEV2301-O/tree/main/fakerJS-project"
+    },
     "author": "Hazey",
     "license": "ISC",
     "dependencies": {
